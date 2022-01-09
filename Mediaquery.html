@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        @media screen and (max-width:2000px) {
+
+            .nav {
+                width: 90%;
+                margin-left: 5%;
+                margin-bottom: 5vh;
+                margin-top: 5vh;
+                height: 15vh;
+                font-size: 10vh;
+            }
+
+            .grid {
+                width: 90%;
+                margin-left: 5%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1em;
+                height: 70vh;
+                color: rgb(178, 178, 178);
+                font-size: 5vh;
+            }
+        }
+            @media screen and (max-width:600px) {
+
+                .nav {
+                    width: 90%;
+                    margin-left: 5%;
+                    margin-bottom: 5vh;
+                    margin-top: 5vh;
+                    height: 15vh;
+                    font-size: 10vh;
+                }
+
+                .grid {
+                    width: 90%;
+                    margin-left: 5%;
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    column-gap: 1em;
+                    row-gap: .5em;
+                    height: 60vh;
+                    color: rgb(178, 178, 178);
+                    font-size: 5vh;
+                }
+
+
+            }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav" style="background-color: yellow;">Navigation</div>
+        <div class="grid">
+            <div class="left" style="background-color: red;">Left Box</div>
+            <div class="con" style="background-color: greenyellow;">Right Box</div>
+        </div>
+    </div>
+</body>
+
+</html>

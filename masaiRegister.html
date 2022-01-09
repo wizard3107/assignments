@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Registration</title>
+    <style>
+        .partition{
+            display: flex;
+            flex-direction:column;
+        }
+        .partition>input{
+            height: 2em;
+            width: 70%;
+            margin-bottom: 2em;
+            margin-left: 1em;
+            border: 1px solid black;
+        }
+        .partition>label{
+            width: 70%;
+            margin-left: 1em;
+            margin-bottom: .5em;
+        }
+        label~h4{
+            margin-left: 1em;
+            margin-top: -1.5em;
+            color: red;
+        }
+        button{
+            width: 70%;
+            height: 3em;
+            margin-left: 1em;
+            background-color: black;
+            border: 0px;
+            color: aliceblue;
+        }
+        .partition+div{
+            background-color: black;
+            color: antiquewhite;
+            padding: 2em;
+        }
+        h3+h1,h3+h4,h3+h3{
+            margin-top: -.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="main" style="display: grid;grid-template-columns: 40% 40%;grid-column-gap:10%; margin-top: 2em;">
+        <div class="partition">
+            <label for="">NAME</label>
+            <input type="text">
+            <label for="">EMAIL</label>
+            <input type="text">
+            <label for="">MOBILE</label>
+            <input type="text">
+            <h4>Enter a valid mobile</h4>
+            <button><h2 style="margin-top: 7px;">REGISTER</h2></button>
+        </div>
+        <div>
+            <h3>NAME</h3>
+            <h1>MASAI</h1>
+            <h3>
+                EMAIL
+            </h3>
+            <h4>email@masaischool.com</h4>
+            <h3>MOBILE</h3>
+            <h3>9838585858</h3>
+        </div>
+    </div>
+</body>
+</html>
