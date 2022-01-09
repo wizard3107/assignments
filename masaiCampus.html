@@ -5,19 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masai Campus</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .images{
+            display: flex;
+            flex-direction: row;
+            width: 1250px;
+            margin: auto;
+            margin-top: 1em;
+            padding: 1em;
+        }
+        img{
+            background-color: rgb(248,249,250);
+            padding: 1em;
+            margin: 1em;
+            border: 1px solid rgb(134, 134, 136);
+        }
+        .para{
+            text-align: center;
+            font-size: 1.5em;
+            width: 1220px;
+            margin: auto;
+            color: rgb(63, 65, 68);
+            padding-top:1em ;
+        }
+        .names{
+            text-align: center;  
+            color: rgb(63,65,68); 
+            font-size: 1.5em;
+            margin-top: -.5em;
+        }
+        h1{
+            margin-top: 1em;
+            text-align: center;
+            font-size: 3em;
+        }
+    </style>
 </head>
 <body>
     <div>
         <div><h1>Masai School Campus</h1></div>
         <div>
-            <p>Our main campus is centerly located in koramangla, Heart of banglore which is well connected to every part of the city. our patna campus is located at KankarBagh Main Road.The reason of choosing co-working space over any classroom is very simple- there is no better place to learn coding than being in the enviroment of 50+ tech teams of various companies.</p>
+            <p class="para">Our main campus is centerly located in koramangla, Heart of banglore which is well connected to every part of the city. our patna campus is located at KankarBagh Main Road.The reason of choosing co-working space over any classroom is very simple- there is no better place to learn coding than being in the enviroment of 50+ tech teams of various companies.</p>
         </div>
-        <div>
+        <div class="images">
             <div class="img">
-                
-            </div>
-            <div class="img"></div>
-            <div class="img"></div>
+                <img src="https://res.cloudinary.com/myhq/image/upload/f_auto,q_auto/w_2880/workspaces/bhive-workspace-koramangala/2.jpg" alt="banglore" height="250px" width="350px"> 
+                <p class="names">91SpringBoard,Banglore</p>
+             </div>
+             <div class="img">
+                <img src="https://res.cloudinary.com/myhq/image/upload/f_auto,q_auto/w_2880/workspaces/bhive-workspace-koramangala/10.jpg" alt="banglore" height="250px" width="350px"> 
+                <p class="names">BHIVE, Banglore</p>
+             </div>
+             <div class="img">
+                <img src="https://res.cloudinary.com/myhq/image/upload/f_auto,q_auto/w_2880/workspaces/bhive-workspace-koramangala/1.jpg" alt="banglore"  height="250px" width="350px"> 
+                <p class="names">WorkStudio, Patna</p>
+             </div>
         </div>
     </div>
 </body>
