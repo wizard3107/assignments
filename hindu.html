@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hindu</title>
+    <style>
+        @media screen and (max-width:1800px) {
+            .main{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1em;
+                row-gap: 1vh;
+                margin: 1em;
+                
+            }
+            .poster{
+                background-color:rgb(8,52,91) ;
+                color: white;
+                height: 58vh;
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                row-gap: 2vh;
+            }
+            .news{
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                row-gap: 2vh;
+            }
+            .text{
+                
+                margin-right: 2em;
+                margin-left: 1em;
+                margin-bottom: .6em;
+            }
+            .pic>img{
+                height: 30vh;
+                width: 100%;
+            }
+            .heads{
+                height: 18vh;
+                background-color: rgb(255, 255, 255);
+                display: grid;
+                grid-template-columns: 1fr 5fr;
+                column-gap: 2vh;
+            }
+            .heads>img{
+                margin: 1vh;
+                height:15vh;
+                width:100%;
+           }
+            span>p{
+                color:rgb(101,99,127);
+                margin-top: -1em;
+            }
+            span>h4{
+                color: rgb(21, 46, 119);
+            }
+
+        }
+        @media screen and (max-width:1200px) {
+            .main{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                column-gap: 1em;
+                row-gap: 1vh;
+                margin: 1em;
+                
+            }
+            .poster{
+                background-color:rgb(8,52,91) ;
+                color: white;
+                height: 58vh;
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                row-gap: 2vh;
+            }
+            .news{
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+                row-gap: 1em;
+                column-gap: 1vh;
+            }
+            .text{
+                margin-right: 2em;
+                margin-left: 1em;
+                margin-bottom: .6em;
+            }
+            .pic>img{
+                height: 30vh;
+                width: 100%;
+            }
+            .heads{
+                height: 18vh;
+                background-color: rgb(255, 255, 255);
+                display: grid;
+                grid-template-columns: 1fr 5fr;
+                column-gap: 2vh;
+            }
+            .heads>img{
+                margin: 1vh;
+                height:15vh;
+                width:100%;
+           }
+           #news5{
+               opacity: 0;
+           }
+            span>p{
+                color:rgb(101,99,127);
+                margin-top: -1em;
+            }
+            span>h4{
+                color: rgb(21, 46, 119);
+            }
+
+        }
+        @media screen and (max-width:600px) {
+            .main{
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                column-gap: 1em;
+                row-gap: 3em;
+                margin: 1em;
+                
+            }
+            .poster{
+                background-color:rgb(8,52,91) ;
+                color: white;
+                height: 40vh;
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr;
+                row-gap: 2em;
+            }
+            .news{
+                display:grid;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
+                row-gap: 1em;
+                column-gap: 1vh;
+                margin-top: -3em;
+            }
+            .text{
+                margin-right: 2em;
+                margin-left: 1em;
+                margin-bottom: 0em;
+                font-size: 10px;
+            }
+            .pic>img{
+                height: 20vh;
+                width: 100%;
+            }
+            .heads{
+                height: 15vh;
+                background-color: rgb(255, 255, 255);
+                display: grid;
+                grid-template-columns: 1fr 5fr;
+                column-gap: 2vh;
+            }
+            .heads>img{
+                margin: 1vh;
+                height:12vh;
+                width:100%;
+           }
+           #news5{
+               opacity:100 ;
+           }
+            span>p{
+                color:rgb(101,99,127);
+                margin-top: -1em;
+            }
+            span>h4{
+                color: rgb(21, 46, 119);
+            }
+
+        }
+
+    </style>
+</head>
+<body style="background-color: aliceblue;">
+    <div class="main">
+        <div class="poster">
+            <div class="pic">
+                <img src="https://bloximages.chicago2.vip.townnews.com/indiawest.com/content/tncms/assets/v3/editorial/5/11/51170718-51e9-11eb-a62e-7f1a554611d1/5ff8b5397c32d.image.jpg?resize=1200%2C900" alt="">
+            </div>
+            <div class="text">
+                <h2>Ahemdabad joint rally with Trump will be historic says Modi</h2>
+                <h4>
+                    KALLOL BHATTACHERJEE
+                </h4>
+                <h4>
+                    SUHASINI HAIDAR
+                </h4>
+                <p>U.S. President to visit Sabrmati Ashram ahead of 'Namaste Trump' event</p>
+            </div>
+            <div class="heads" id="news5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGhE7LEpkPn42oIJXsK-esVnMBysw7JzrkA&usqp=CAU" alt="img">
+                <span>
+                    <h4>National</h4>
+                    <p>Ahemdabad glitters to welcome Donald Trump</p>
+                </span>
+            </div>
+        </div>
+        <div class="news">
+            <div class="heads" id="news1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStujTqWqPn3awKux98C8ETJ86iS4DRYNRClG9KG85peXz0LHPX8CvWzEkM0RPWSU6rb-8&usqp=CAU" alt="img">
+                <span>
+                    <h4>THE HUDDLE</h4>
+                    <p>THe Huddle 2020 | Regional integration pegged to SAARC revival, says Ranil Wickremesinghe</p>
+                </span>
+            </div>
+            <div class="heads" id="news2">
+                <img src="https://media.gettyimages.com/photos/indian-army-soldiers-stand-guard-atop-a-vehicle-near-the-site-of-a-picture-id1228337401?s=612x612" alt="img">
+                <span>
+                    <h4>National</h4>
+                    <p>Over 10 lakh Kashmir students to din uniforms after seven months</p>
+                </span>
+            </div>
+            <div class="heads" id="news3">
+                <img src="https://i.pinimg.com/originals/f3/63/5c/f3635c7ae1d6779135957b8cccd6cdca.jpg" alt="img">
+                <span>
+                    <h4>National</h4>
+                    <p>Some Restrictions imposed on export of medical equipment to China, says MEA</p>
+                </span>
+            </div>
+            <div class="heads" id="news4">
+                <img src="https://wallpapercave.com/wp/wp7206159.jpg" alt="img">
+                <span>
+                    <h4>THE HUDDLE</h4>
+                    <p>Only "a microscopic minority" protesting against CAA: Tejaswi Surya</p>
+                </span>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

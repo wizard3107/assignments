@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Async Programming</h1>
+  </body>
+</html>
+
+<script>
+  // console.log(1);
+  // console.log(2);
+
+  // //for (var i = 0; i < 10000000000; i++) {} //blocking behaviour ( peice of code which take long time to execute)
+
+  // setTimeout(function () {
+  //   console.log(3);
+  // }, 3000);
+
+  // //What exactly browser is doing? ( working as alarm clock )
+
+  // console.log(4);
+
+  // //js executes code line by line ( synchronous execution )
+
+  // //one resource
+
+  // //what is todo list of js?
+
+  // //step 1
+
+  // function download(url){
+
+  // }
+
+  // function process(picture){
+
+  // }
+
+  //     //step 2
+
+  //     function download(url){
+
+  //       setTimeout(function(){
+
+  //         console.log(`Downloading ${url}`)
+  //       },3000)
+
+  // }
+
+  // function process(picture){
+
+  //   console.log(`Processing ${picture}`)
+
+  // }
+
+  // //step 3
+
+  // function download(url) {
+  //   setTimeout(function () {
+  //     console.log(`Downloading ${url}`);
+  //   }, 3000);
+  // }
+
+  // function process(picture) {
+  //   console.log(`Processing ${picture}`);
+  // }
+
+  // var url = "https://catimage.com";
+
+  // download(url);
+  // process(url);
+
+  // //step 4 - callback
+
+  // var url = "https://catimage.com";
+
+  // function download(url, callback) {
+  //   setTimeout(function () {
+  //     console.log(`Downloading ${url}`);
+
+  //     callback(url);
+  //   }, 3000);
+  // }
+
+  // function process(picture) {
+  //   console.log(`Processing ${picture}`);
+  // }
+
+  // download(url, process);
+
+  // //step 5 - callback
+
+  // var url = "https://catimage.com";
+
+  // function download(url, callback) {
+  //   setTimeout(function () {
+  //     console.log(`Downloading ${url}`);
+
+  //     callback(url);
+  //   }, 3000);
+  // }
+
+  // download(url, function (picture) {
+  //   console.log(`Processing ${picture}`);
+  // });
+
+  //step 6 - callback hell
+
+  var url1 = "https://catimage1.com";
+  var url2 = "https://catimage2.com";
+  var url3 = "https://catimage3.com";
+
+  function download(url, callback) {
+    setTimeout(function () {
+      console.log(`Downloading ${url}`);
+
+      callback(url);
+    }, 3000);
+  }
+
+  download(url1, function (picture) {
+    console.log(`Processing ${picture}`);
+
+    download(url2, function (picture) {
+      console.log(`Processing ${picture}`);
+
+      download(url3, function (picture) {
+        console.log(`Processing ${picture}`);
+      });
+    });
+  });
+</script>
