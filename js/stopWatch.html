@@ -13,15 +13,15 @@
             margin: 1em;  
         }
         h2{
-            border: 1px solid black;
+            margin-left: 1em;
         }
     </style>
 </head>
 
 <body>
     <div id="time">
-        <h2 id="hr">00</h2>
-        <h2 id="min">00</h2>
+        <h2 id="hr"></h2>
+        <h2 id="min"></h2>
         <h2 id="sec">00</h2>
         <h4 id="ms">00</h4>
     </div>
@@ -113,9 +113,9 @@
             clearInterval(mili);
             clearInterval(seconds);
             clearInterval(minute);
-            hr.textContent = "00";
+            hr.textContent = "";
             sec.textContent = "00";
-            min.textContent = "00";
+            min.textContent = "";
             mm.textContent = "00";
         }
     </script>
