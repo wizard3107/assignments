@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #time{
+            display: flex;
+            flex-direction: row;
+            margin: 1em;  
+        }
+        h2{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="time">
+        <h2 id="hr">00</h2>
+        <h2 id="min">00</h2>
+        <h2 id="sec">00</h2>
+        <h4 id="ms">00</h4>
+    </div>
+    <div id="btn">
+        <button class="start" onclick="start()">Start</button>
+        <button class="pause" onclick="pause()">Pause</button>
+        <button class="reset" onclick="reset()">Reset</button>
+    </div>
+    <script>
+        var mm = document.getElementById("ms");
+        var hr = document.getElementById("hr");
+        var min = document.getElementById("min");
+        var sec = document.getElementById("sec");
+        var hour, mili, seconds, minute;
+        function start() {
+            hour = setInterval(() => {
+
+                var hrt = +hr.textContent
+                if (hrt === 24) {
+                    hr.textContent = 00+"hr";
+                }
+                else
+                {
+                    if(hrt<9)
+                    hr.textContent ='0'+(hrt+1)
+                    else
+                    hr.textContent = hrt + 1;
+
+                }
+                    hr.textContent = hrt + 1;
+            }, 3600000);
+            minute = setInterval(() => {
+                var mint = +min.textContent;
+                if (mint === 60) {
+                    min.textContent = 00;
+                }
+                else
+                {
+                    if(mint<9)
+                    min.textContent ='0'+(mint+1)
+                    else
+                    min.textContent = mint + 1;
+
+                }
+                    min.textContent = mint + 1;
+            }, 60000);
+            seconds = setInterval(() => {
+                var sect = +sec.textContent
+                if (sect === 60) {
+                    sec.textContent = 00;
+                }
+                else
+                {
+                    if(sect<9)
+                    sec.textContent ='0'+(sect+1)
+                    else
+                    sec.textContent = sect + 1;
+
+                }
+                    
+            }, 1000);
+
+
+            mili = setInterval(() => {
+
+                var mmt = +mm.textContent;
+                if (mmt === 100) {
+                    mm.textContent = 00;
+                }
+                else
+                {
+                    if(mmt<10)
+                    mm.textContent ='0'+(mmt+1)
+                    else
+                    mm.textContent = mmt + 1
+
+                }
+                              }, 10);
+        }
+        function pause() {
+            clearInterval(hour);
+            clearInterval(mili);
+            clearInterval(seconds);
+            clearInterval(minute);
+        }
+        function reset() {
+            
+            clearInterval(hour);
+            clearInterval(mili);
+            clearInterval(seconds);
+            clearInterval(minute);
+            hr.textContent = "00";
+            sec.textContent = "00";
+            min.textContent = "00";
+            mm.textContent = "00";
+        }
+    </script>
+</body>
+
+</html>
