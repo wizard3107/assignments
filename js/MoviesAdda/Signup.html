@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Adda - SignUp</title>
+    <style>
+        body {
+            background-color: rgb(68, 64, 64);
+        }
+
+        .nav {
+            background-color: chocolate;
+            color: whitesmoke;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        .link {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        @media screen and (max-width:2000px) {
+            #signup {
+                background-color: aliceblue;
+                width: 25%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2em;
+                text-align: center;
+                border-radius: 8px;
+                padding: 2em;
+            }
+
+            #signupForm {
+                display: grid;
+                grid-template-columns: 25% 75%;
+                row-gap: 1em;
+                margin: 1em;
+
+            }
+
+            #signupForm>label {
+                font-size: larger;
+                font-weight: bolder;
+                text-align: left;
+            }
+
+            #signupForm>input {
+                font-size: larger;
+                border-radius: 4px;
+                border: 2px dotted black;
+                text-align: left;
+            }
+
+            #signupBtn {
+                font-size: larger;
+                font-weight: bolder;
+                color: brown;
+                margin-bottom: 1em;
+                border: 2px solid blue;
+                border-radius: 4px;
+            }
+
+        }
+
+        @media screen and (max-width:1500px) {
+            #signup {
+                background-color: aliceblue;
+                width: 35%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2em;
+                text-align: center;
+                border-radius: 8px;
+                padding: 1em;
+            }
+
+            #signupForm {
+                display: grid;
+                grid-template-columns: 25% 75%;
+                row-gap: 1em;
+                margin: 1em;
+
+            }
+
+            #signupForm>label {
+                font-size: larger;
+                font-weight: bolder;
+                text-align: left;
+            }
+
+            #signupForm>input {
+                font-size: larger;
+                border-radius: 4px;
+                border: 2px dotted black;
+                text-align: left;
+            }
+
+            #signupBtn {
+                font-size: larger;
+                font-weight: bolder;
+                color: brown;
+                margin-bottom: 1em;
+                border: 2px solid blue;
+                border-radius: 4px;
+            }
+
+        }
+
+        @media screen and (max-width:1000px) {
+            #signup {
+                background-color: aliceblue;
+                width: 55%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2em;
+                text-align: center;
+                border-radius: 8px;
+                padding: 1em;
+            }
+
+            #signupForm {
+                display: grid;
+                grid-template-columns: 25% 75%;
+                row-gap: 1em;
+                margin: 1em;
+
+            }
+
+            #signupForm>label {
+                font-size: larger;
+                font-weight: bolder;
+                text-align: left;
+            }
+
+            #signupBtn {
+                font-size: larger;
+                font-weight: bolder;
+                color: brown;
+                margin-bottom: 1em;
+                border: 2px solid blue;
+                border-radius: 4px;
+            }
+
+        }
+
+        @media screen and (max-width:600px) {
+            #signup {
+                background-color: aliceblue;
+                width: 65%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2em;
+                text-align: center;
+                border-radius: 8px;
+                padding: 2em;
+            }
+
+            #signupForm {
+                display: grid;
+                grid-template-columns: 25% 75%;
+                row-gap: 1em;
+                margin: 1em;
+
+            }
+
+            #signupForm>label {
+                font-size: larger;
+                font-weight: bolder;
+                text-align: left;
+            }
+
+            #signupBtn {
+                font-size: larger;
+                font-weight: bolder;
+                color: brown;
+                margin-bottom: 1em;
+                border: 2px solid blue;
+                border-radius: 4px;
+            }
+        }
+
+        .links {
+            color: aliceblue;
+            margin: 1em;
+            margin-right: 2em;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <h1 style="margin-left: 1em;"> MoviesAdda</h1>
+        <div class="link"><a href="Home.html" class="links">Home</a>
+            <a href="Login.html" class="links">LogIn</a>
+            <a href="Signup.html" class="links">SignUp</a>
+        </div>
+    </div>
+    <div id="signup">
+        <form>
+            <h1>SignUp</h1>
+            <div id="signupForm">
+                <label for="name">Name</label>
+                <input type="text" class="name" placeholder="Name" />
+                <label for="mail">Email</label>
+                <input type="text" class="mail" placeholder="E-Mail" />
+                <label for="num">Mobile No.</label>
+                <input type="text" class="num" placeholder="Number" />
+                <label for="password">Password</label>
+                <input type="password" class="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="SignUp" id="signupBtn">
+        </form>
+    </div>
+    <script>
+        var form = document.querySelector("form");
+        form.addEventListener("submit",function(e){
+            e.preventDefault();
+            var name = e.target[0].value;
+            //console.log(name);
+            var email = e.target[1].value;
+            var mobile = e.target[2].value;
+            var password = e.target[3].value;
+            var data = {
+                Name:name,
+                Mobile:mobile,
+                Email:email,
+                Password:password
+            }
+            alert("Succesfully signed Up");
+            // console.log(data);
+            var d = JSON.stringify(data);
+            localStorage.setItem("user_data",d);
+            window.location.href="Login.html" 
+
+        })
+    </script>
+</body>
+
+</html>
