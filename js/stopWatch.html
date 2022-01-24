@@ -7,25 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: black;
+            color: antiquewhite;
+            
+        }
+
         #time{
             display: flex;
             flex-direction: row;
-            margin: 1em;  
+            margin: 1em;
+            justify-content: center
         }
         h2{
             margin-left: 1em;
         }
+        button{
+            background-color: aqua;
+            color: black;
+            font-size: larger;
+            font-weight: 600;
+            border-radius: 4px;
+            border: 0ch;
+            margin: 2px;
+        }
+        button:hover{
+            background-color: aliceblue;
+        }
+        #hrd{
+            display:none;
+        }
+        #mind{
+            display:none;
+        }
+        #secd{
+            display:none;
+                }
     </style>
 </head>
 
 <body>
     <div id="time">
         <h2 id="hr"></h2>
+        <h2 id="hrd">:</h2>
         <h2 id="min"></h2>
+        <h2 id="mind">:</h2>
         <h2 id="sec">00</h2>
+        <h2 id="secd">:</h2>
         <h4 id="ms">00</h4>
     </div>
-    <div id="btn">
+    <div id="btn" style="display: flex; justify-content: center;">
         <button class="start" onclick="start()">Start</button>
         <button class="pause" onclick="pause()">Pause</button>
         <button class="reset" onclick="reset()">Reset</button>
@@ -35,6 +66,8 @@
         var hr = document.getElementById("hr");
         var min = document.getElementById("min");
         var sec = document.getElementById("sec");
+        var mind=document.getElementById("mind");
+        var hrd=document.getElementById("hrd");
         var hour, mili, seconds, minute;
         function start() {
             hour = setInterval(() => {
@@ -55,8 +88,9 @@
             }, 3600000);
             minute = setInterval(() => {
                 var mint = +min.textContent;
+
                 if (mint === 60) {
-                    min.textContent = 00;
+                    min.textContent = "00";
                 }
                 else
                 {
@@ -70,8 +104,9 @@
             }, 60000);
             seconds = setInterval(() => {
                 var sect = +sec.textContent
-                if (sect === 60) {
-                    sec.textContent = 00;
+                if (sect === 59) {
+                    sec.textContent = "00";
+                    mind.style.display="block";
                 }
                 else
                 {
@@ -80,6 +115,17 @@
                     else
                     sec.textContent = sect + 1;
 
+                }
+                if(sect%2===0){
+                    mind.style.visibility="visible";
+                    secd.style.visibility="visible";
+                    hrd.style.visibility="visible";
+
+                }
+                else{
+                    mind.style.visibility="hidden";
+                    secd.style.visibility="hidden";
+                    hrd.style.visibility="hidden";
                 }
                     
             }, 1000);
@@ -90,6 +136,7 @@
                 var mmt = +mm.textContent;
                 if (mmt === 100) {
                     mm.textContent = 00;
+                    secd.style.display="block"
                 }
                 else
                 {
