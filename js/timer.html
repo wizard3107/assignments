@@ -43,53 +43,41 @@
         var hr = document.getElementById("hr");
         var min = document.getElementById("min");
         var sec = document.getElementById("sec");
-        var hour, seconds, minute;
+        var inhr= +hr.value;
+        var inmin= +min.value;
+        var insec= +sec.value; 
+        var timer;
         var hrt = +hr.value;
         var mint = +min.value;
+        var sect= +sec.value;
         function start() {
-            seconds = setInterval(() => {
-                var sect = +sec.value
-                if (sect === 00) {
-                    sec.value = 59;
-
-                    if (mint < 9)
-                        min.value = '0' + (mint - 1)
-                    else
-                        min.value = mint - 1;
-
-                    if (mint === 00) 
+            timer = setInterval(()=>{
+                if(sect===0){
+                    sec.innerText=59;
+                }
+                if(mint<0)
                     {
-                        min.value =59;
-                        if (hrt < 9)
-                            hr.value = '0' + (hrt - 1)
-                        else{
-                            hr.value = hrt - 1;
-                        }
+                        min.innerText=59;
                     }
-                }
-                else {
-                    if (sect < 9)
-                        sec.value = '0' + (sect - 1)
-                    else
-                        sec.value = sect - 1;
-
-                }
-
-            }, 1000);
-
-
-
+                    else{
+                        mint--;
+                    }
+                if(hrt===0)
+                    {
+                                    
+                    }
+                
+                sect--;
+            },1000)
         }
         function pause() {
             clearInterval(seconds);
         }
         function reset() {
-
-            
             clearInterval(seconds);
-            hr.value = "";
-            sec.value = "";
-            min.value = "";
+            hr.innerText = inhr;
+            sec.innerText = insec;
+            min.innerText = inmin;
         }
     </script>
 </body>
