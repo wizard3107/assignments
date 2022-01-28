@@ -10,7 +10,6 @@
         body{
             overflow-x: hidden;
             color: aliceblue;
-            background-color: rgb(68, 64, 64);
         }
         *{
             text-transform: uppercase;
@@ -85,10 +84,6 @@
         box-shadow: 1px 0 .4em #008080 , -1px 0 .4em #008080;
         border-radius: 8px;
         }
-        .gcard:hover{
-            background-color: #008080;
-            color: aliceblue;
-        }
     </style>
 </head>
 
@@ -130,8 +125,7 @@
                     title.setAttribute("id","title");
                     var imbd = document.createElement("p");
                     imbd.setAttribute("id","imbd");
-                    imbd.innerText = `IMBD rating: 
-                    ${el.imbd}`;
+                    imbd.innerText = `${el.imbd}`;
                     var date= document.createElement("p");
                     date.setAttribute("id","date");
                     date.innerText=`${el.release}`;

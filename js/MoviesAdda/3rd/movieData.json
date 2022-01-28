@@ -1,0 +1,90 @@
+{
+    "data": [
+        {
+            "imbd": "7.9",
+            "name": "Iron-Man",
+            "title":"The geni with money",
+            "release": "05-Feb-2008",
+            "img": "https://media.comicbook.com/2017/10/iron-man-movie-poster-marvel-cinematic-universe-1038878.jpg"
+        },
+        {
+            "imbd": "6.6",
+            "name": "Hulk",
+            "title":"THE INCREDIBLE",
+            "release": "13-June-2008",
+            "img": "https://media.comicbook.com/2017/10/the-incredible-hulk-movie-poster-marvel-cinematic-universe-1038886.jpg"
+        },
+        {
+            "imbd": "7.0",
+            "name": "Thor",
+            "title":" Courage is IMMORTAL",
+            "release": "29-Apr-2011",
+            "img": "https://media.comicbook.com/2017/10/thor-movie-poster-marvel-cinematic-universe-1038890.jpg"
+        },
+        {
+            "imbd": "6.9",
+            "name": "Captain America",
+            "title":"The first avenger",
+            "release": "29-July-2011",
+            "img": "https://media.comicbook.com/2017/10/captain-america-the-first-avenger-movie-poster-marvel-cinematic--1038891.jpeg"
+        },
+        {
+            "imbd": "8.0",
+            "name": "The Avengers",
+            "title":"the warriors of earth",
+            "release": "04-May-2012",
+            "img": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg"
+        },
+        {
+            "imbd": "7.3",
+            "name": "ant-Man",
+            "title":"chutku maharaj",
+            "release": "24-July-2015",
+            "img": "https://media.comicbook.com/2017/10/ant-man-movie-poster-marvel-cinematic-universe-1038903.jpg"
+        },
+        {
+            "imbd": "7.5",
+            "name": "Doctor Strange",
+            "title":"the impossibilties are endless",
+            "release": "04-Nov-2016",
+            "img": "https://media.comicbook.com/2017/10/doctor-strange-movie-poster-marvel-cinematic-universe-1038908.jpg"
+        },
+
+        {
+            "imbd": "7.4",
+            "name": "SpiderMan",
+            "title":" Home Coming",
+            "release": "07-July-2020",
+            "img": "https://media.comicbook.com/2017/10/spider-man-homecoming-movie-poster-marvel-cinematic-universe-1038913.jpg"
+        },
+        {
+            "imbd": "7.3",
+            "name": "Black Panther",
+            "title":"long live the king",
+            "release": "16-Feb-2018",
+            "img": "https://media.comicbook.com/2017/10/black-panther-marvel-cinematic-universe-1038917.jpg"
+        },
+        {
+            "imbd": "6.8",
+            "name": "Captain Marvel",
+            "title":"the saviour of the world",
+            "release": "08-March-2019",
+            "img": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_.jpg"   
+        },
+        {
+            "imbd": "6.5",
+            "name": "Eternals",
+            "title":"In the begining",
+            "release": "05-Nov-2021",
+            "img": "https://m.media-amazon.com/images/M/MV5BYzVjYThmNDAtOTE1NC00YjQ2LTk4NWYtNTc4Yzc4OTRhYjllXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg"   
+        },
+        
+        {
+            "imbd": "8.0",
+            "name": "SpiderMan",
+            "title":"No Way home",
+            "release": "16-Dec-2021",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrdPsGJEBxBev7gKo_EMp0Pgk7Q7su_xTUxf3vo8dE9S_CiG2Z"
+        }
+    ]
+}
