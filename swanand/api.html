@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+        }
+        #card{
+            width: 90%;
+            height: 50vh;
+            margin: 2%;
+            padding: 2%;
+        }
+        #productImg{
+            height: 150px;
+            width: 150px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script>
+        let url = "https://fakestoreapi.com/products"
+        fetch(url)
+            .then(function (res) {
+                console.log("res:", res);
+                return res.json(); //it is also creaitng another promise
+            })
+            .then(function (fin_res) {
+                console.log("res:", fin_res);
+                appendProducts(fin_res);
+            })
+            .catch(function (err) {
+                console.log("error:", err);
+            })
+        // show the produts on the dom
+        var container = document.querySelector(".container");
+        function appendProducts(data) {
+
+            data.forEach(ele => {
+                console.log(ele)
+
+                let div = document.createElement("div");
+                div.setAttribute("id","card");
+                let image = document.createElement("img");
+                image.src=ele.image;
+                image.setAttribute("id","productImg");
+                let title = document.createElement("p");
+                title.innerText=ele.title
+                let price = document.createElement("h2");
+                price.innerText=`Rs.${ele.price}`;
+                div.append(image,title,price);
+                container.append(div);
+            });
+        } 
+    </script>
+</body>
+
+</html>

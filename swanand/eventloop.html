@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Loop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Supermercado One', cursive;
+            text-align: center;
+            background-color: darkgrey;
+        }
+        h1{
+            color: aquamarine;
+        }
+        h2{
+            text-align: left;
+            margin-left: 5%;
+            color: blueviolet;
+            
+        }
+        p{
+            text-align: left;
+            margin-left: 5%;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <h1>Event Loop</h1>
+
+    <p style="text-align: center;">JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks</p>
+        <h2>Call Stack</h2>
+       <p> Whenever you call a function in javascript all the instruction which the function contain get loaded into the stack,then javascript execute the function by pooping it out from the stack.
+    </p>
+       <h2> Web API</h2>
+      <p>  Whenever javascript encounter's a piece of code that will take long time to execute,it hand over the that piece code to web api for particular time period.Web Api is just a code holder which hold the particular code for the particular time period and then send the piece of code to the call back queue.
+    </p>
+       <h2> Callback Queue</h2>
+       <p> It is another data structure that facitilate javascript to add next code to execute.It works on the First in First out method,Whenever JS finds a piece on code which take some time it handover it to the web api and after particular time period web api sent that code to callback queue.Then callback queue send the piece of code in the callstack only when callstack is empty.
+    </p>
+
+</body>
+</html>

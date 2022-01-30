@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetchComics</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,33%);
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        @media screen and (max-width:600px) {
+
+             .container{
+            display: grid;
+            grid-template-columns: repeat(2,50%);
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>
+<script>
+    let container=document.querySelector(".container");
+    let url = "https://reqres.in/api/users"
+    fetch (url)
+    .then(function(res){
+        console.log("RESULT:",res);
+        return res.json();
+    })
+    .then(function (res){
+        console.log("res:",res);
+        res.data.forEach(ele => {
+            let card = document.createElement("div");
+            let img = document.createElement("img");
+            img.src=ele.avatar;
+            let name  = document.createElement("h2");
+            name.innerText=`${ele.first_name} ${ele.last_name}`
+            let email = document.createElement("p");
+            email.innerText=ele.email;
+            card.append(img,name,email);
+            container.append(card);            
+        });
+    })
+    .catch(function(err){
+        console.log("err:",err);
+    })
+</script>
