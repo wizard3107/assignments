@@ -21,7 +21,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             width: 100%;
-
         }
         .link {
             display: flex;
@@ -101,11 +100,20 @@
         </div>
     </div>
     <div id="slideShow"></div>
+    <div class="btn"></div>
     <div id="grid"></div>
     <script>
         let url = "./movieData.json"
         var main = document.getElementById("slideShow");
-        var grid = document.getElementById("grid")
+        var grid = document.getElementById("grid");
+        let btn = document.querySelector(".btn");
+        let arr_data =[];
+        let low=document.createElement("button");
+        let high=document.createElement("button");
+        low.innerText="low to high";
+        high.innerText="high to low";
+        btn.append(low,high);
+        
         fetch(url)
             .then(function (res) {
                 console.log('res: ', res)
@@ -113,6 +121,7 @@
             })
             .then(function (res) {
                 res.data.forEach(el => {
+                    arr_data.push(el);
                     let card = document.createElement("div");
                     card.setAttribute("class","card");
                     let cardImg = document.createElement("div");
@@ -140,13 +149,19 @@
                     card.append(cardImg,cardDetails);
                     main.append(card);
                     // grid.appendChild(cardImg);
-                });
-                res.data.forEach(ele => {
+                    low.addEventListener("click",lowSort(arr_data));
+                    high.addEventListener("click",highSort(arr_data));
+    
+                    if(arr_data.length===res.data.length)
+                    {
+                        console.log("length equal");
+                        arr_data.forEach(ele => {
                     let gCard = document.createElement("div");
                     gCard.setAttribute("class","gCard");
                     let gCardImg = document.createElement("div");
                     let img= document.createElement("img");
                     img.setAttribute("src",`${ele.img}`);
+                    console.log(ele.img);
                     img.setAttribute("id","cimg");
                     gCardImg.setAttribute("id","gCardImg");
                     let gCardDetails = document.createElement("div");
@@ -166,14 +181,22 @@
                     gCardImg.append(img);
                     gCardDetails.append(imbd,gName,title,date);
                     gCard.append(gCardImg,gCardDetails);
-                    grid.append(gCard);
+                    grid.append(gCard); 
+                });
+                    }
                     
                 });
             })
             .catch(function (err) {
                 console.log('err:', err);
             })
-            
+            console.log(arr_data);
+           const lowSort = (arr) =>{
+
+           }
+           const highSort = (arr)=>{
+
+           }
             let n=1;
             var slider = setInterval(()=>{
                 var container=document.getElementById("slideShow");
