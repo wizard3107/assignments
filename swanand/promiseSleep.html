@@ -18,20 +18,29 @@
     btn.addEventListener("click",check)
     function check(){
         // console.log(+time.value)
-        let myPromise = new Promise(function(resolve,reject){
+        var obj = {
+                success: "",
+                message:""
+            }
+        let myPromise = new Promise (function(resolve,reject){
+           
         if(+time.value){
-            resolve("true");
+            resolve(true);
             }
             else 
-            reject("false");
+            reject(false);
         })
         myPromise.then(function(res){
-            console.log("success:",res);
-            console.log("Success")
+           
+            obj.success=res;
+            obj.message="Success"
+            console.log("object:",obj);
         })
         myPromise.catch(function(err){
-            console.log("success:",err);
-            console.log("Invalid Argument");
+
+            obj.success=err;
+            obj.message="invalid argument, promise accepts only valid numbers"
+            console.log("object:",obj);
         })
     
 }
