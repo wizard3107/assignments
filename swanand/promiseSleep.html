@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Sleep</title>
+</head>
+<body>
+         <input type="text" placeholder="enter time in milisecond" id="input">
+        <button id="submit">Submit</button>
+   
+    
+</body>
+<script>
+    let btn = document.getElementById("submit");
+    var time = document.getElementById("input");
+    btn.addEventListener("click",check)
+    function check(){
+        // console.log(+time.value)
+        let myPromise = new Promise(function(resolve,reject){
+        if(+time.value){
+            resolve("true");
+            }
+            else 
+            reject("false");
+        })
+        myPromise.then(function(res){
+            console.log("success:",res);
+            console.log("Success")
+        })
+        myPromise.catch(function(err){
+            console.log("success:",err);
+            console.log("Invalid Argument");
+        })
+    
+}
+
+    
+
+</script>
+</html>
