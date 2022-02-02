@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+
+<body>
+    <h1>Prototype and Inheritence</h1>
+</body>
+
+</html>
+<script>
+    // var obj ={
+    //     name:'bike' 
+    // }
+    // console.log("object:",obj);
+    // //creatng another object using obj
+    //   var obj2 = Object.create(obj);
+    //   console.log("object2:",obj2.name); 
+
+    // var family  ={
+    //     father:"krishna",
+    //     myFather(){
+    //         console.log(this.father)
+    //     }
+    // }
+    // var son = Object.create(family);
+    // son.myFather();
+    // console.log("Son:",son);
+
+    //ways to use prototypal inheritence
+    // function Person(n, a) {
+    //     this.name = n;
+    //     this.age = a;
+    // }
+    // Person.prototype.setCity = function (c) {
+    //     this.city = c;
+    // }
+    // var person1 = new Person('ashu', 21);
+    // person1.setCity("bareilly")
+    // console.log("person1:", person1);
+    
+    //has Own Pr operty
+   // console.log(person1.hasOwnProperty('name'));
+
+    // prototype for function
+    // function b(){
+    //     return true;
+    // }
+
+    // prototype for array
+    var arr =[1,2,3]
+    console.log(arr);
+    // console.log(arr.__proto__);
+
+    Array.prototype.myPrint=function(){
+        console.log("haccking")
+    }
+    arr.myPrint();
+</script>
