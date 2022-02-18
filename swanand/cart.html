@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<style>
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 2em;
+        text-align: center;
+    }
+    #card{
+        width: 90%;
+        height: 50vh;
+        margin: 2%;
+        padding: 2%;
+    }
+    #productImg{
+        height: 150px;
+        width: 150px;
+    }
+
+    
+</style>
+<body>
+    
+    <div class="container"></div>
+</body>
+<script>
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    function appendProducts(data) {
+        var container = document.querySelector(".container");
+data.forEach(ele => {
+    let div = document.createElement("div");
+    div.setAttribute("id","card");
+    let image = document.createElement("img");
+    image.src=ele.image;
+    image.setAttribute("id","productImg");
+    let title = document.createElement("p");
+    title.innerText=`${ele.title.split("").splice(0,40).join("")}`;
+    let price = document.createElement("h2");
+    price.innerText=`Rs.${ele.price}`;
+   
+    div.append(image,title,price);
+    container.append(div);
+});
+} 
+appendProducts(cart);
+</script>
+</html>

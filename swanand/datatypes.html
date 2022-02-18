@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,100&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: grey;
+            color: white;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto Serif', sans-serif;
+        }
+
+        .div1 {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 2em;
+            margin-top: 2em;
+            padding-top: 2em;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            column-gap: 2em;
+        }
+
+        #disp_all {
+            color: black;
+            background-color: rgb(194, 26, 26);
+            font-size: 1.5em;
+            border: 2px solid grey;
+
+
+        }
+
+        #disp_all:hover {
+            color: black;
+            background-color: white;
+            font-size: 2em;
+            border: 2px solid cadetblue;
+        }
+
+         button {
+            color: black;
+            background-color: rgb(95, 125, 160);
+            font-size: 1.5em;
+            border: 2px solid white;
+            border-radius: 4px;
+
+        }
+
+        button:hover {
+            color: black;
+            background-color: white;
+            font-size: 1.5em;
+            border: 2px solid cadetblue;
+            border-radius: 4px;
+        }
+
+        .div2 {
+            width: 90%;
+            margin: auto;
+            margin-bottom: 2em;
+            margin-top: 2em;
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: 2em;
+
+        }
+
+        b {
+            color: aquamarine;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        li {
+            font-size: 1.5em;
+        }
+
+        .childlist {
+            font-size: 1em;
+        }
+
+        .div2 {
+            visibility: hidden;
+        }
+
+        .disp {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <Button id="obj">Objects</Button>
+        <Button id="arr">Arrays</Button>
+        <Button id="fun">Function</Button>
+        <Button id="num">Numbers</Button>
+        <Button id="empty">null</Button>
+        <Button id="unassigned">undefined</Button>
+        <Button id="disp_all">Show all</Button>
+    </div>
+    <div class="div2">
+        <div class="disp"></div>
+        <div id="object">
+            <h1>Object</h1>
+            <ul>
+                <li>In JavaScript almost everything is object except Primitive Datatypes</li>
+                <li>It is belong to the Non-Primitive Datatype</li>
+                <li>It is declare by using => {}.It consist of key value pair.</li>
+                <li>Objects are Mutable in nature, there values can be changed in Memory.<b>Ex:</b>if we declare let person = {
+                    name:"Ashu"},then let m = person and then change the value as m.name = "Pankaj" so it will gonna
+                    change in both the places like in person as well as in m,because it will not create a copy but
+                    person and m are same object only we just define it with different name.</li>
+                <li>Object perform Methods
+                    <ul>
+                        <li class="childlist">Methods are <b>action</b> that can performed on Object</li>
+                        <li class="childlist">An object method is an object property containing a function definition.
+                        </li>
+
+                    </ul>
+                <li>Ways to create Object</li>
+                <ul>
+                    <li>You can create object using <b>Object literals</b> <i>e.g: let car = {}</i></li>
+                    <li>You can create object using <b>object.create()</b></li>
+                    <li>You can create object using <b>new</b> Keyword <i>e.g: let carB = new Object()</i></li>
+                    <li>You can make a constuctor and then create object of same as constructor types.</li>
+                </ul>
+            </ul>
+        </div>
+        <div id="array">
+            <h1>Array</h1>
+            <ul>
+                <li>Array is a Non-Primitive Datatype</li>
+                <li>An array is a special letiable which can hold more than one value.Ex:- let
+                    detail=["Ashu","Ravi","Pankaj"].You can access the array value by using index.detail[0]=Ashu;
+                </li>
+                <li>It is declare by using => []</li>
+                <li>You can create array by using <b>new</b> Keyword. e.g:- let detail = new Array("Ashu","Ravi")
+                </li>
+                <li>Arrays are Mutable,there value can be changes in memory.Ex: <b>let name
+                        =["Ashu","Ravi","Pankaj"]</b> , if we change the value of particular index like
+                    name[0]="Abhishek" <b>then our array look like ["Abhishek","Ravi","Pankaj"]</b></li>
+
+            </ul>
+
+        </div>
+        <div id="function">
+            <h1>Function</h1>
+            <ul>
+                <li>A JavaScript function is a block of code used to perform a particular task.</li>
+                <li>A Javascript function is invoked only when we call it.Ex: function sub(a,b){ let s = a - b; return s
+                    } <b>Invoke:- console.log(sub(7,3))</b></li>
+                <li>Function gives us relaibility to Resuse.You can use same piece of code again and again.You can use
+                    the same code many times with different arguments, to produce different results.</li>
+                <li>letiables declared within a JavaScript function, become LOCAL to the function.Local letiables can
+                    only be accessed from within the function.</li>
+                <li></li>
+            </ul>
+        </div>
+        <div id="number">
+            <h1>Numbers</h1>
+            <ul>
+                <li>Numbers is a Primitive Datatype.</li>
+                <li>It represents the malipulate numbers like 7,8,9</li>
+                <li>Numbers are Immutable,there value can't be changed in memory.
+                </li>
+
+            </ul>
+
+        </div>
+        <div id="null">
+
+            <h1>null</h1>
+            <ul>
+                <li>null is a Primitive Datatype</li>
+                <li>null is a value.</li>
+                <li>You can assign it to the letiable,object,string to wipe out all the data in it.</li>
+                <li>It is just a special value which represents <b>"nothing","empty" , "value unknown"</b></li>
+            </ul>
+        </div>
+        <div id="undefined">
+            <h1>undefined</h1>
+            <ul>
+                <li>undefined is a Primitive Datatype</li>
+                <li>The meaning of undefined is <b>value is not defined.</b> </li>
+                <li>If the letiable is declared ,but its value is not assigned then its value is undefined. <b>Ex: let
+                        a;
+                        console.log(a), It will disp undefined</b></li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    let btn_obj = document.getElementById("obj").addEventListener("click", obj)
+    let btn_arr = document.getElementById("arr").addEventListener("click", arr)
+    let btn_fun = document.getElementById("fun").addEventListener("click", fun)
+    let btn_num = document.getElementById("num").addEventListener("click", num)
+    let btn_null = document.getElementById("empty").addEventListener("click", empty)
+    let btn_undefined = document.getElementById("unassigned").addEventListener("click", unassigned)
+    let btn_disp = document.getElementById("disp_all").addEventListener("click", disp)
+    let display = document.querySelector(".disp");
+    function obj() {
+
+        let disp_obj = document.getElementById("object")
+        console.log(disp_obj)
+        let ele = disp_obj.innerHTML
+        display.innerHTML = ele;
+    }
+    function arr() {
+
+        let disp_arr = document.getElementById("array")
+        let ele = disp_arr.innerHTML
+        display.innerHTML = ele;
+    }
+    function fun() {
+
+        let disp_fun = document.getElementById("function")
+        let ele = disp_fun.innerHTML
+        display.innerHTML = ele;
+    }
+    function num() {
+
+        let disp_num = document.getElementById("number")
+        let ele = disp_num.innerHTML
+        display.innerHTML = ele;
+    }
+    function empty() {
+
+        let disp_null = document.getElementById("null")
+        let ele = disp_null.innerHTML
+        display.innerHTML = ele;
+    }
+    function unassigned() {
+
+        let disp_undefined = document.getElementById("undefined")
+        let ele = disp_undefined.innerHTML
+        display.innerHTML = ele;
+    }
+    function disp() {
+        let disp_obj = document.getElementById("object")
+        let disp_arr = document.getElementById("array")
+        let disp_fun = document.getElementById("function")
+        let disp_num = document.getElementById("number")
+        let disp_null = document.getElementById("null")
+        let disp_undefined = document.getElementById("undefined")
+        display.innerHTML = "";
+        disp_obj.style.visibility = "visible"
+        disp_arr.style.visibility = "visible"
+        disp_fun.style.visibility = "visible"
+        disp_num.style.visibility = "visible"
+        disp_null.style.visibility = "visible"
+        disp_undefined.style.visibility = "visible"
+    }
+</script>

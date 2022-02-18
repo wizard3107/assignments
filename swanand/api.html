@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content=" initial-scale=1.0">
     <title>Document</title>
     <style>
         .container{
             display: grid;
             grid-template-columns: 25% 25% 25% 25%;
+            row-gap: 2em;
+            text-align: center;
         }
         #card{
             width: 90%;
@@ -21,21 +23,33 @@
             height: 150px;
             width: 150px;
         }
+        h4{
+            margin: 0;
+            padding: 0;
+        }
+
         
     </style>
 </head>
 
 <body>
+    <div class="button"> 
+        <button onclick="LtoH(items)">Sort L to H</button>
+        <button onclick="HtoL(items)">Sort H to L</button>
+        <a href="cart.html"><button id="cartBtn"></button></a>
+    </div>
     <div class="container"></div>
     <script>
+        var items=[]
         let url = "https://fakestoreapi.com/products"
         fetch(url)
             .then(function (res) {
-                console.log("res:", res);
+                // console.log("res:", res);
                 return res.json(); //it is also creaitng another promise
             })
             .then(function (fin_res) {
                 console.log("res:", fin_res);
+                items=fin_res;
                 appendProducts(fin_res);
             })
             .catch(function (err) {
@@ -44,23 +58,56 @@
         // show the produts on the dom
         var container = document.querySelector(".container");
         function appendProducts(data) {
-
+            container.innerHTML=null
             data.forEach(ele => {
-                console.log(ele)
-
                 let div = document.createElement("div");
                 div.setAttribute("id","card");
                 let image = document.createElement("img");
                 image.src=ele.image;
                 image.setAttribute("id","productImg");
                 let title = document.createElement("p");
-                title.innerText=ele.title
+                title.innerText=`${ele.title.split("").splice(0,40).join("")}`;
                 let price = document.createElement("h2");
-                price.innerText=`Rs.${ele.price}`;
-                div.append(image,title,price);
+                price.innerText=`$${ele.price}`;
+                let add = document.createElement("button");
+                add.innerText="Add To Cart";
+                add.onclick= function(){
+                    addToCart(ele);
+                }
+                div.append(image,title,price,add);
                 container.append(div);
             });
         } 
+        var cart = JSON.parse(localStorage.getItem('cart'));
+        let cartBtn = document.getElementById("cartBtn");
+        cartBtn.innerHTML=`<h4>Cart:${cart.length}</h4>`
+        function addToCart(data)
+        {
+            console.log(data);
+            
+            if(cart === null)
+            {
+                cart=[];
+                localStorage.setItem('cart',JSON.stringify(cart));
+            }
+            cart.push(data);
+            localStorage.setItem('cart',JSON.stringify(cart));
+            cartBtn.innerHTML=`<h4>Cart:${cart.length}</h4>`
+            console.log(cart);
+        }
+        
+        function LtoH(arr){
+            arr=arr.sort(function(a,b){
+                return a.price-b.price;
+            })
+            appendProducts(arr)
+        }
+        function HtoL(arr){
+            arr=arr.sort(function(a,b){
+                return b.price-a.price;
+            })
+            appendProducts(arr)
+        }
     </script>
 </body>
 
